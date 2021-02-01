@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="https://www.thymeleaf.org"
+  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+  lang="en"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git Shop</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html">
+        <img src="../assets/img/gitshoplogo.png" alt="gitShot logo"
+      /></a>
+
+      <div class="search">
+        <i class="fa fa-search hide_search"></i>
+        <form action="">
+          <input type="text" placeholder="search" />
+          <button><i class="fa fa-search"></i></button>
+        </form>
+        <a href="advanced_search.html">advanced search</a>
+        <a id="login" th:href="@{/login}">Login</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="categorias">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#">HTML5</a></li>
+          <li><a href="#">CSS3</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">ReactJS</a></li>
+          <li><a href="#">VeuJS</a></li>
+          <li><a href="#">Angular</a></li>
+          <li><a href="#">TypeScript</a></li>
+        </ul>
+      </div>
+
+      <div class="pesquisa_avancada">
+        <h1>Advanced search</h1>
+
+        <form action="">
+          <input type="text" placeholder="Description" />
+
+          <label for="categories">Categories:</label>
+
+          <select name="categories" id="categories">
+            <option value="select">Select</option>
+            <option value="html5">HTML5</option>
+            <option value="css3">CSS3</option>
+            <option value="javaScript">JavaScript</option>
+            <option value="reactJS">ReactJS</option>
+            <option value="vueJS">VueJS</option>
+            <option value="angular">Angular</option>
+            <option value="typeScript">TypeScript</option>
+          </select>
+
+          <label for="price">Price filter:</label>
+
+          <div id="price">
+            <input type="number" placeholder="min" min="1" />
+            <h6>to</h6>
+            <input type="number" placeholder="max" min="1" />
+          </div>
+
+          <div class="date">
+            <div>
+              <label for="date_start">Data start:</label>
+              <input type="date" id="date_start" name="date_start" />
+            </div>
+
+            <div>
+              <label for="date_end">Data end:</label>
+              <input type="date" id="date_end" name="date_end" />
+            </div>
+          </div>
+
+          <input type="submit" value="search" />
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <a href="#">About this page</a>
+    </footer>
+  </body>
+</html>

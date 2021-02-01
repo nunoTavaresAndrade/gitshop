@@ -1,0 +1,104 @@
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div#head {
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3rem;
+}
+
+form {
+  width: 90%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form label {
+  color: white;
+  font-size: 1.8rem;
+  text-align: left;
+  padding: 10px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+}
+form input {
+  height: 45px;
+  width: 50%;
+  background-color: var(--accent-color);
+  border-radius: 3px 0 0 3px;
+  border: none;
+  outline: none;
+  font-size: medium;
+  color: white;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+form input[type="submit"] {
+  padding: 10px 15px;
+  border-radius: 0 3px 3px 0;
+  font-size: 1.8rem;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: var(--accent-color);
+}
+
+form a,
+form p {
+  font-size: 1.6rem;
+  color: white;
+  margin-left: 30px;
+  text-decoration: none;
+}
+
+form a:hover {
+  color: var(--primary-color);
+}
+
+form select {
+  width: 50%;
+  height: 45px;
+  background-color: var(--accent-color);
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: medium;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+@media only screen and (max-width: 600px) {
+  div#head {
+    font-size: 2rem;
+  }
+
+  div#head img {
+    width: 50%;
+  }
+}

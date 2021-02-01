@@ -1,0 +1,520 @@
+/*cabeçalho*/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 140px;
+  border: 1px dashed var(--background-color);
+  margin-bottom: 20px;
+}
+
+header img {
+  width: 250px;
+}
+
+/* cabeçalho search*/
+
+.search {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.hide_search {
+  margin-right: 20px;
+  font-size: 2rem;
+  display: none;
+}
+.search form {
+  width: 70%;
+  background-color: var(--search-input-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+.search form input[type="text"] {
+  height: 45px;
+  width: 100%;
+  background-color: var(--accent-color);
+  border-radius: 3px 0 0 3px;
+  border: none;
+  outline: none;
+  font-size: medium;
+  padding: 10px;
+  color: white;
+}
+
+.search form button {
+  height: 45px;
+  padding: 10px 15px;
+  border-radius: 0 3px 3px 0;
+  outline: none;
+  border: none;
+  background-color: var(--accent-color);
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+/*cabeçalho search btn */
+.search form button:hover {
+  background: var(--secondary-color);
+}
+
+.search a {
+  font-size: 1.6rem;
+  color: white;
+  margin-left: 30px;
+  text-decoration: none;
+}
+
+.search a:hover {
+  color: var(--primary-color);
+}
+
+/* main = categotias e produtos*/
+main {
+  display: flex;
+}
+
+/*categorias*/
+.categorias {
+  width: 205px;
+  height: auto;
+  background-color: var(--secondary-color);
+  border-right: 1.5px dashed var(--secondary-color);
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.categorias h4 {
+  color: var(--primary-color);
+  font-size: large;
+  font-weight: 700;
+  margin-bottom: 15px;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.categorias ul {
+  list-style: none;
+}
+
+.categorias ul li {
+  padding: 10px 30px;
+}
+
+.categorias ul li a {
+  color: white;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+
+.categorias ul li a:hover {
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.categorias ul :nth-child(2) {
+  font-weight: bold;
+}
+
+.categorias ul :nth-child(2),
+.categorias ul li:hover {
+  background-color: var(--background-color);
+  margin-left: 0px;
+}
+
+/*produtos*/
+.produtos,
+.pesquisa_avancada {
+  width: 100%;
+  border: 1px solid var(--background-color);
+  margin-right: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.produtos_main_content {
+  width: auto;
+  display: flex;
+  margin-top: 15px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.produtos #total_produtos {
+  display: block;
+  color: white;
+  font-size: medium;
+  text-align: right;
+}
+
+#total_produtos {
+}
+
+.produtos #total_produtos em {
+  color: var(--primary-color);
+  margin-left: 10px;
+}
+
+.produto {
+  width: auto;
+  max-width: 1000px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  padding: 40px 20px;
+  color: white;
+  background-color: var(--secondary-color);
+  margin-bottom: 40px;
+  cursor: pointer;
+
+  /*Por forma a dividir os vários produtos, deve existir uma linha horizontal entre cada produto.
+  a linha que o prof pediu*/
+  border-bottom: 3px solid var(--background-color);
+}
+
+.produto:hover {
+  background-color: var(--accent-color);
+}
+
+.produto .title {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+.produto .title:hover {
+  color: var(--primary-color);
+}
+
+.produto .imgandprice {
+  display: flex;
+  align-items: center;
+}
+
+.produto .imgandprice h5 {
+  font-size: 3rem;
+}
+
+.produto img {
+  width: 227px;
+  height: 150px;
+  margin: 15px 15px 15px 0;
+}
+
+.produto strong {
+  color: var(--primary-color);
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+.product_info {
+  padding-bottom: 20px;
+}
+
+.product_info h4,
+p {
+  font-weight: normal;
+  font-size: 1.6rem;
+  text-align: justify;
+  padding: 10px 0;
+}
+
+.product_info h4 {
+  font-size: 2rem;
+}
+
+.prevandnext {
+  text-align: right;
+
+  color: white;
+  font-size: 3rem;
+}
+
+.prevandnext i {
+  padding: 10px;
+}
+
+.prevandnext i:hover {
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+/*pesquisa avançada*/
+
+.pesquisa_avancada {
+  align-items: center;
+}
+
+.pesquisa_avancada h1 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.pesquisa_avancada form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-top: 20px;
+  justify-content: center;
+
+  padding-bottom: 8%;
+}
+
+.pesquisa_avancada form input,
+.pesquisa_avancada form select {
+  width: 100%;
+  height: 45px;
+  background-color: var(--accent-color);
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: medium;
+  padding: 10px;
+}
+
+.pesquisa_avancada form select {
+  width: 100%;
+}
+
+#price {
+  display: flex;
+}
+
+#price input[type="number"] {
+  width: 200px;
+  max-width: 28%;
+}
+
+#price h6 {
+  margin: -8px 20px;
+}
+
+.pesquisa_avancada form label,
+h6 {
+  color: var(--primary-color);
+  font-size: 1.6rem;
+  text-align: left;
+  padding: 20px 0;
+}
+
+.pesquisa_avancada .date {
+  width: 100%;
+  display: flex;
+  margin-top: 30px;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.pesquisa_avancada .date div {
+  width: 200px;
+  max-width: 30%;
+  margin-top: 10px;
+  margin-right: 40px;
+}
+
+.pesquisa_avancada .date div input {
+  margin-top: 20px;
+}
+
+.pesquisa_avancada form input[type="submit"] {
+  margin-top: 20px;
+}
+.pesquisa_avancada form input[type="submit"]:hover {
+  background-color: var(--secondary-color);
+}
+
+/*info _produtos*/
+
+.produtos {
+}
+
+.imganddescription {
+  display: flex;
+  color: white;
+}
+
+.imganddescription img {
+  margin-top: 15px;
+  display: inline;
+}
+
+.imganddescription p {
+  margin-left: 20px;
+  line-height: 30px;
+}
+
+.paymentstypes {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.paymentstypes .pay {
+  width: 70px;
+  padding: 10px;
+  margin-left: 20px;
+}
+
+.pay:hover {
+  background-color: #ab79d660;
+  padding: 4px;
+}
+
+.info {
+  display: flex;
+}
+
+.info h6 {
+  margin-right: 30px;
+  color: white;
+  font-weight: normal;
+}
+
+.produtos strong {
+  color: var(--primary-color);
+  margin-right: 10px;
+}
+
+.produtos form {
+  width: 100%;
+  display: flex;
+  align-self: center;
+  flex-wrap: wrap;
+}
+
+.produtos form label {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-right: 30px;
+  margin-top: 10px;
+}
+
+.produtos form input {
+  width: 70px;
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 1.6rem;
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+/*rodapé = about*/
+
+footer {
+  width: 100%;
+  height: 30px;
+  padding-left: 10px;
+  border-top: 1px dashed var(--secondary-color);
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: var(--secondary-color);
+}
+
+footer a {
+  font-size: small;
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--primary-color);
+}
+
+/*media queries*/
+
+@media only screen and (max-width: 749px) {
+  /* cabeçalho search*/
+
+  header img {
+    width: 150px;
+    margin-top: 25px;
+  }
+
+  main {
+    flex-direction: column-reverse;
+  }
+
+  .categorias {
+    width: 100%;
+    height: auto;
+    background-color: var(--secondary-color);
+  }
+
+  .produtos {
+    padding: 0 50px;
+  }
+
+  .produto .imgandprice h5 {
+    font-size: 1.8rem;
+  }
+
+  .produto img {
+    width: 227px;
+    height: 150px;
+  }
+
+  .produto strong {
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 1.5rem;
+  }
+
+  .prevandnext {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .produto img {
+    width: 180px;
+  }
+  .produtos {
+  }
+
+  .imganddescription {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+  }
+
+  .imganddescription img {
+    margin-top: 15px;
+    max-width: 550px;
+    width: 100%;
+  }
+  .imganddescription p {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .produto img {
+    width: 124px;
+  }
+
+  .search form {
+    display: none;
+  }
+
+  .hide_search {
+    display: inline;
+    cursor: pointer;
+    margin-right: -10px;
+  }
+}

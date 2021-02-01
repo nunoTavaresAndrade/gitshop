@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="https://www.thymeleaf.org"
+  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+  lang="en"
+>
+  <head>
+    <title>Sign Up Gitshop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/global.css" />
+    <link rel="stylesheet" href="../../css/auth.css" />
+  </head>
+
+  <body>
+    <div id="head">
+      <img src="../../assets/img/gitshoplogo.png" alt="" />
+      <h2>Sign Up</h2>
+    </div>
+    <form th:action="@{/signup}" method="post">
+      <input type="text" name="username" placeholder="username" />
+
+      <input type="password" placeholder="password" name="password" />
+
+      <select name="role" id="role">
+        <option value="SelectRole">Select Role</option>
+        <option value="cliente">user</option>
+        <option value="admin">Admin</option>
+      </select>
+
+      <input type="submit" value="Sign up" />
+      <p>Already have an account? <a th:href="@{/login}">Login</a></p>
+    </form>
+  </body>
+</html>
