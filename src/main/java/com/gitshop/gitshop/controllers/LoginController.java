@@ -30,31 +30,20 @@ class LoginController {
 
     @PostMapping("/login")
     public String login(
-        @RequestParam(name = "username", required = true, defaultValue = "") String username,
-        @RequestParam(name = "password", required = true, defaultValue = "") String password,
+        @RequestParam(name = "username", defaultValue = "") String username,
+        @RequestParam(name = "password", defaultValue = "") String password,
         Model UserModel){
 
             User user = userRepository.findByUsername(username);
             if (user == null) {
                 System.out.println("user not found");
-            }else{
-                if(validatelLogin(user, password))
-                    System.out.println("login done");
-               
             }
 
-
-
-           return "auth/login";
+           return "index";
 
         }
 
 
-        public boolean validatelLogin(User user, String password){
-            BCryptPasswordEncoder bcryptPasswordEncoder = new BCryptPasswordEncoder();
-            String encodedPassword = bcryptPasswordEncoder.encode(password);
-            return user.getPassword().equals(encodedPassword);
-        }
 
 
 

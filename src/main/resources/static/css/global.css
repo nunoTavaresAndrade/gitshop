@@ -24,6 +24,8 @@ a {
   --secondary-color: #212125;
   --product-bg-color: #0f7f8b;
   --search-input-color: #333333;
+  --alert-bg-color: #f2dede;
+  --alert-txt-color: #ac6694;
 
   /*fonts*/
   font-size: 62.5%;

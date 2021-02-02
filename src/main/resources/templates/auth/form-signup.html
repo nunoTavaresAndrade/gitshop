@@ -19,18 +19,44 @@
       <h2>Sign Up</h2>
     </div>
     <form th:action="@{/signup}" method="post">
-      <input type="text" name="username" placeholder="username" />
 
-      <input type="password" placeholder="password" name="password" />
 
-      <select name="role" id="role">
-        <option value="SelectRole">Select Role</option>
-        <option value="cliente">user</option>
-        <option value="admin">Admin</option>
-      </select>
+        <div class="alert-container" th:if="${param.error}">
 
-      <input type="submit" value="Sign up" />
-      <p>Already have an account? <a th:href="@{/login}">Login</a></p>
+            <div class="alert">
+                <p class="alert" th:text="${alert_msg}" ></p>
+            </div>
+
+        </div>
+
+
+
+
+        <label>
+          <input type="text" name="username" placeholder="username" />
+        </label>
+
+        <label>
+          <input type="password" placeholder="password" name="password" />
+        </label>
+
+        <label for="role">
+          <select name="role" id="role">
+            <option value="SelectRole">Select Role</option>
+            <option value="cliente">user</option>
+            <option value="admin">Admin</option>
+          </select>
+        </label>
+
+        <div class="alert-container" th:if="${param.error}">
+
+
+
+        </div>
+
+        <input type="submit" value="Sign up" />
+        <p>Already have an account? <a th:href="@{/login}">Login</a></p>
+
     </form>
   </body>
 </html>

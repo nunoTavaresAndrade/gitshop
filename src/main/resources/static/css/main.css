@@ -124,7 +124,7 @@ main {
 .categorias ul :nth-child(2),
 .categorias ul li:hover {
   background-color: var(--background-color);
-  margin-left: 0px;
+  margin-left: 0;
 }
 
 /*produtos*/

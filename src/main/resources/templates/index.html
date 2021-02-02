@@ -2,7 +2,7 @@
 <html
   xmlns="http://www.w3.org/1999/xhtml"
   xmlns:th="https://www.thymeleaf.org"
-  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
   lang="en"
 >
   <head>
@@ -18,8 +18,8 @@
   </head>
   <body>
     <header>
-      <a href="./index.html">
-        <img src="../assets/img/gitshoplogo.png" alt="gitShot logo"
+      <a th:href="@{/home}">
+        <img src="assets/img/gitshoplogo.png" alt="gitShot logo"
       /></a>
       <div class="search">
         <i class="fa fa-search hide_search"></i>
@@ -27,8 +27,16 @@
           <input type="text" placeholder="search" />
           <button><i class="fa fa-search"></i></button>
         </form>
-        <a href="advanced_search.html">advanced search</a>
-        <a id="login" th:href="@{/login}">Login</a>
+        <a href="advanced_search">advanced search</a>
+
+
+        <a th:href="@{/login}" sec:authorize="isAnonymous()">Login</a>
+        <a th:href="@{/signup}" sec:authorize="isAnonymous()">Register</a>
+        <a th:href="@{/logout}" sec:authorize="isAuthenticated()">Logout</a>
+
+
+
+
       </div>
     </header>
 
@@ -51,13 +59,13 @@
         <p id="total_produtos">total css articles: <em>5</em></p>
 
         <div class="produtos_main_content">
-          <a href="produtos.html">
+          <a th:href="@{/products}">
             <div class="produto">
               <h3 class="title">A Complete Guide to Flexbox</h3>
 
               <div class="imgandprice">
                 <img
-                  src="../assets/img/css/css_flexbox.png"
+                  src="assets/img/css/css_flexbox.png"
                   alt="css flexbox article buner"
                 />
                 <h5><strong>Price:</strong><br />25.99€</h5>
@@ -77,13 +85,13 @@
             </div>
           </a>
 
-          <a href="produtos.html">
+          <a th:href="@{/products}">
             <div class="produto">
               <h3 class="title">A Complete Guide to Grid</h3>
 
               <div class="imgandprice">
                 <img
-                  src="../assets/img/css/css_grid.jpg"
+                  src="assets/img/css/css_grid.jpg"
                   alt="css Grid layout article buner"
                 />
                 <h5><strong>Price:</strong><br />25.99€</h5>
@@ -100,13 +108,13 @@
             </div>
           </a>
 
-          <a href="infoprodutos.html">
+          <a th:href="@{/products}">
             <div class="produto">
               <h3 class="title">A Complete Guide to CSS Media Queries</h3>
 
               <div class="imgandprice">
                 <img
-                  src="../assets/img/css/css_media_queries.png"
+                  src="assets/img/css/css_media_queries.png"
                   alt="css media queries article banner"
                 />
                 <h5><strong>Price:</strong><br />15.99€</h5>
@@ -124,13 +132,13 @@
             </div>
           </a>
 
-          <a href="produtos.html">
+          <a th:href="@{/products}">
             <div class="produto">
               <h3 class="title">CSS3 - An Ultimate Guide for Beginners</h3>
 
               <div class="imgandprice">
                 <img
-                  src="../assets/img/css/css3_guide.jpg"
+                  src="assets/img/css/css3_guide.jpg"
                   alt="css3 Tutorial for Beginners"
                 />
                 <h5><strong>Price:</strong><br />55.99€</h5>
@@ -149,13 +157,13 @@
             </div>
           </a>
 
-          <a href="produtos.html">
+          <a th:href="@{/produts}">
             <div class="produto">
               <h3 class="title">A Complete Guide to CSS Functions</h3>
 
               <div class="imgandprice">
                 <img
-                  src="../assets/img/css/css_functions.png"
+                  src="assets/img/css/css_functions.png"
                   alt="css Grid layout article buner"
                 />
                 <h5><strong>Price:</strong><br />5.99€</h5>

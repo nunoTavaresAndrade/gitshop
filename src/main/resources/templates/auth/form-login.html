@@ -20,12 +20,29 @@
     </div>
 
     <form th:action="@{/login}" method="post">
-      <input type="text" name="username" placeholder="username" />
 
-      <input type="password" placeholder="password" name="password" />
+      <div class="alert-container" th:if="${param.error}">
+
+        <div class="alert">
+          Invalid username and password.
+        </div>
+
+      </div>
+
+      <label>
+        <input type="text" name="username" placeholder="username" />
+      </label>
+
+      <label>
+        <input type="password" placeholder="password" name="password" />
+      </label>
+
 
       <input type="submit" value="Sign In" />
+
       <p>Don't have an account? <a th:href="@{/signup}">sign up</a></p>
+
+
     </form>
   </body>
 </html>

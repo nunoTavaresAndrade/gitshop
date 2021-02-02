@@ -13,13 +13,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="../css/global.css" />
-    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
     <header>
-      <a href="index.html">
-        <img src="../assets/img/gitshoplogo.png" alt="gitShot logo"
+      <a th:href="@{/home}">
+        <img src="assets/img/gitshoplogo.png" alt="gitShot logo"
       /></a>
 
       <div class="search">
@@ -28,7 +28,7 @@
           <input type="text" placeholder="search" />
           <button><i class="fa fa-search"></i></button>
         </form>
-        <a href="advanced_search.html">advanced search</a>
+        <a th:href="@{/advanced_search}">advanced search</a>
         <a id="login" th:href="@{/login}">Login</a>
       </div>
     </header>
