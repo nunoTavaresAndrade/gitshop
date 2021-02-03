@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,900;1,700&display=swap");
+
+header{
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    color: white;
+}
+
+
+h3{
+    font-size: 2.5rem;
+    color: white;
+}
+
+
+header a{
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: white;
+    margin-left: 5px;
+}
+
+header a:hover{
+    color: var(--primary-color);
+
+}
+
+header i{
+   margin-right: 5px;
+
+}
+
+
+
+
+.search-bar {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: -20px;
+    margin-left: 12%;
+}
+
+.search-bar input[type="text"] {
+    height: 45px;
+    width: 100%;
+    border-radius: 3px 0 0 3px;
+    border: none;
+    outline: none;
+    font-size: medium;
+    padding: 10px;
+    color: white;
+    background-color: var(--accent-color);
+}
+
+.search-bar button {
+    height: 45px;
+    padding: 10px 15px;
+    border-radius: 0 3px 3px 0;
+    outline: none;
+    border: none;
+    background-color: var(--accent-color);
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/*cabeçalho search btn */
+.search-bar button:hover {
+    background: var(--secondary-color);
+}
+
+.search-bar a {
+    font-size: 1.6rem;
+    color: white;
+    margin-left: 30px;
+    text-decoration: none;
+}
+
+.search-bar a:hover {
+    color: var(--primary-color);
+}
+
+
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-left: 9%;
+    color: white;
+    flex-wrap: wrap;
+
+
+}
+
+form label {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-right: 30px;
+    margin-top: 10px;
+
+}
+form select,
+form textarea,
+form input {
+    width: 80%;
+    height: 40px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 1.6rem;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    background-color: var(--accent-color);
+    color: white;
+
+}
+
+
+form textarea{
+    height: 100px;
+    resize:none;
+    font-size: 1.6rem;
+
+}
+
+
+.imgsrc{
+    width: 80%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    padding: 10px;
+}
+
+form input[type="submit"]:hover{
+    background-color: var(--accent-color);
+    color: white;
+
+}
+
+
+/* list products*/
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 2.5rem;
+}
+
+th{
+    color: var(--primary-color);
+    font-size:  1.6rem;
+    text-align: center;
+}
+
+.th-center{
+    text-align: center;
+}
+
+td{
+    font-size: 1.5rem;
+    color: white;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid var(--accent-color);
+
+}
+
+tr:hover {background-color: var(--secondary-color);}
+
+td button {
+    text-decoration: none;
+    color: white;
+    font-size: 2.5rem;
+    background: transparent;
+    border: none;
+    outline: none;
+
+
+}
+
+
+td i:hover {
+    color: var(--alert-txt-color);
+    cursor: pointer;
+
+
+}
+
+
+@media only screen and (max-width: 600px) {
+    header{
+        margin-top: 20px;
+
+    }
+
+    h3{
+        font-size: 1.8rem;
+
+    }
+
+
+    header a{
+        font-size: 1.4rem;
+
+    }
+
+
+
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        margin-left: 4%;
+        flex-wrap: wrap;
+
+
+    }
+
+    form label {
+        font-size: 1.3rem;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+    form textarea,
+    form input {
+        width: 70%;
+
+    }
+
+
+    form textarea{
+
+        font-size: 1.4rem;
+
+    }
+
+    form select{
+        width: 70%;
+        margin-left: 20px;
+
+    }
+
+    .imgsrc{
+
+    }
+
+
+
+
+    /* list products*/
+
+    table {
+
+        line-height: 1.8rem;
+    }
+
+    th{
+        color: var(--primary-color);
+        font-size:  1.4rem;
+        text-align: center;
+    }
+
+    .th-center{
+        text-align: center;
+    }
+
+    td{
+        font-size: 1.3rem;
+
+    }
+
+    th, td {
+        padding: 10px;
+
+
+    }
+
+
+
+    td button {
+        font-size: 1.5rem;
+
+
+
+    }
+
+
+
+}

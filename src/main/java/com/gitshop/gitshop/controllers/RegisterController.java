@@ -3,7 +3,7 @@ package com.gitshop.gitshop.controllers;
 import com.gitshop.gitshop.models.User;
 import com.gitshop.gitshop.models.UserRole;
 
-import com.gitshop.gitshop.services.UserService;
+import com.gitshop.gitshop.services.user.UserService;
 import com.gitshop.gitshop.utils.AuthValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,9 +22,12 @@ public class RegisterController {
     @Autowired
     private UserService userService;
 
+
     @Autowired
     private AuthValidator authValidator;
 
+
+    // sign up router, getting the view
     @GetMapping(value = {"/signup", "/signup?error"})
     public String register_view(Model model) {
 
@@ -32,19 +35,17 @@ public class RegisterController {
     }
 
 
-
-
-
-
+    // sign up router post user data
     @PostMapping("/signup")
-    public String newRegister(@RequestParam(
-            name = "username", defaultValue = "") String username,
+    public String newRegister(
+            @RequestParam(name = "username", defaultValue = "") String username,
             @RequestParam(name = "password") String password,
             @RequestParam(name = "role") String role, Model model) {
 
 
         UserRole userRole = role.equalsIgnoreCase("Admin") ?
                     UserRole.ADMIN : UserRole.USER;
+
         User user = new User(username, password,userRole);
 
         if(!authValidator.formValidate(user)) {
@@ -63,7 +64,7 @@ public class RegisterController {
 
 
 
-        return "index";
+        return "redirect:/home";
 
     }
 

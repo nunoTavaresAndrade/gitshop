@@ -28,8 +28,9 @@
           <input type="text" placeholder="search" />
           <button><i class="fa fa-search"></i></button>
         </form>
-        <a th:href="@{/advanced_search}">advanced search</a>
-        <a id="login" th:href="@{/login}">Login</a>
+        <a th:href="@{/login}" sec:authorize="isAnonymous()">Login</a>
+        <a th:href="@{/logout}" sec:authorize="isAuthenticated()">Logout</a>
+
       </div>
     </header>
 

@@ -1,4 +1,4 @@
-package com.gitshop.gitshop.services;
+package com.gitshop.gitshop.services.user;
 
 import java.util.Arrays;
 import java.util.Collection;

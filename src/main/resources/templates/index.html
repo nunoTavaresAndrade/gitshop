@@ -23,19 +23,13 @@
       /></a>
       <div class="search">
         <i class="fa fa-search hide_search"></i>
-        <form action="">
-          <input type="text" placeholder="search" />
+        <form >
+          <input type="text" placeholder="search" name="search" />
           <button><i class="fa fa-search"></i></button>
         </form>
-        <a href="advanced_search">advanced search</a>
-
-
+        <a th:href="@{advanced_search}">Advanced search</a>
         <a th:href="@{/login}" sec:authorize="isAnonymous()">Login</a>
-        <a th:href="@{/signup}" sec:authorize="isAnonymous()">Register</a>
         <a th:href="@{/logout}" sec:authorize="isAuthenticated()">Logout</a>
-
-
-
 
       </div>
     </header>
@@ -45,141 +39,47 @@
         <h4>Categories</h4>
 
         <ul>
-          <li><a href="#">HTML5</a></li>
-          <li><a href="#">CSS3</a></li>
-          <li><a href="#">JavaScript</a></li>
-          <li><a href="#">ReactJS</a></li>
-          <li><a href="#">VeuJS</a></li>
-          <li><a href="#">Angular</a></li>
-          <li><a href="#">TypeScript</a></li>
+          <li><a th:href="@{/?categorie=html5}">HTML5</a></li>
+          <li><a th:href="@{/?categorie=css3}">CSS3</a></li>
+          <li><a th:href="@{/?categorie=javascript}">JavaScript</a></li>
+          <li><a th:href="@{/?categorie=reatjs}">ReactJS</a></li>
+          <li><a th:href="@{/?categorie=veujs}">VeuJS</a></li>
+          <li><a th:href="@{/?categorie=angular}">Angular</a></li>
+          <li><a th:href="@{/?categorie=typescript}">TypeScript</a></li>
         </ul>
       </div>
 
       <div class="produtos">
-        <p id="total_produtos">total css articles: <em>5</em></p>
+        <p id="total_produtos" th:text="'Total '+ ${categorie} +' articles: '+${length} "/>
 
         <div class="produtos_main_content">
-          <a th:href="@{/products}">
+
+          <a th:each="Product: ${products}" th:href="@{/products}">
+
             <div class="produto">
-              <h3 class="title">A Complete Guide to Flexbox</h3>
+              <h3 class="title"th:text="${Product.title}"/>
 
               <div class="imgandprice">
+                <!-- src="${Product.imgSrc}"-->
                 <img
+
                   src="assets/img/css/css_flexbox.png"
                   alt="css flexbox article buner"
                 />
-                <h5><strong>Price:</strong><br />25.99€</h5>
+                <h5><strong>Price:</strong><br /><span th:text="${Product.price} + '$00'" th:remove="tag"/></h5>
               </div>
 
               <div class="product_info">
-                <h4><strong>Categories:</strong>CSS3</h4>
+                <h4><strong>Categories:</strong> <span th:text="${Product.categorie}" th:remove="tag"/> </h4>
                 <p>
-                  <strong>Description:</strong>Our comprehensive guide to CSS
-                  flexbox layout. This complete guide explains everything about
-                  flexbox, focusing on all the different possible properties for
-                  the parent element (the flex container) and the child elements
-                  (the flex items). It also includes history, demos, patterns,
-                  and a browser support chart.
+                  <strong>Description:</strong>
+                  <div th:text="${Product.description}" th:remove="tag"/>
                 </p>
               </div>
             </div>
           </a>
 
-          <a th:href="@{/products}">
-            <div class="produto">
-              <h3 class="title">A Complete Guide to Grid</h3>
 
-              <div class="imgandprice">
-                <img
-                  src="assets/img/css/css_grid.jpg"
-                  alt="css Grid layout article buner"
-                />
-                <h5><strong>Price:</strong><br />25.99€</h5>
-              </div>
-
-              <div class="product_info">
-                <h4><strong>Categories:</strong>CSS3</h4>
-                <p>
-                  <strong>Description:</strong>Our comprehensive guide to CSS
-                  grid, focusing on all the settings both for the grid parent
-                  container and the grid child elements.
-                </p>
-              </div>
-            </div>
-          </a>
-
-          <a th:href="@{/products}">
-            <div class="produto">
-              <h3 class="title">A Complete Guide to CSS Media Queries</h3>
-
-              <div class="imgandprice">
-                <img
-                  src="assets/img/css/css_media_queries.png"
-                  alt="css media queries article banner"
-                />
-                <h5><strong>Price:</strong><br />15.99€</h5>
-              </div>
-
-              <div class="product_info">
-                <h4><strong>Categories:</strong>CSS3</h4>
-                <p>
-                  <strong>Description:</strong>Media queries can modify the
-                  appearance (and even behavior) or a website or app based on a
-                  matched set of conditions about the user's device, browser or
-                  system settings.
-                </p>
-              </div>
-            </div>
-          </a>
-
-          <a th:href="@{/products}">
-            <div class="produto">
-              <h3 class="title">CSS3 - An Ultimate Guide for Beginners</h3>
-
-              <div class="imgandprice">
-                <img
-                  src="assets/img/css/css3_guide.jpg"
-                  alt="css3 Tutorial for Beginners"
-                />
-                <h5><strong>Price:</strong><br />55.99€</h5>
-              </div>
-
-              <div class="product_info">
-                <h4><strong>Categories:</strong>CSS3</h4>
-                <p>
-                  <strong>Description:</strong>An Ultimate Guide for Beginners.
-                  CSS3 tutorial for Beginners from Scratch. Learn CSS3 and build
-                  your first website using CSS. Learn How to code CSS projects
-                  by your-self. Learn all the basic tolls in CSS. Learn to
-                  create your first project in CSS
-                </p>
-              </div>
-            </div>
-          </a>
-
-          <a th:href="@{/produts}">
-            <div class="produto">
-              <h3 class="title">A Complete Guide to CSS Functions</h3>
-
-              <div class="imgandprice">
-                <img
-                  src="assets/img/css/css_functions.png"
-                  alt="css Grid layout article buner"
-                />
-                <h5><strong>Price:</strong><br />5.99€</h5>
-              </div>
-
-              <div class="product_info">
-                <h4><strong>Categories:</strong>CSS3</h4>
-                <p>
-                  <strong>Description:</strong>Like any other programming
-                  language, CSS has functions. They can be inserted where you’d
-                  place a value, or in some cases, accompanying another value
-                  declaration.
-                </p>
-              </div>
-            </div>
-          </a>
         </div>
 
         <div class="prevandnext">

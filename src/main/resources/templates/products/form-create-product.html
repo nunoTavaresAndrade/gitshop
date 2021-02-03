@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="https://www.thymeleaf.org"
+        xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+        lang="en"
+>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git Shop create product</title>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/products.css"/>
+
+</head>
+<body>
+
+    <header>
+        <a th:href="@{/home}">
+            <img src="../assets/img/gitshoplogo.png" alt="gitShot logo"/>
+        </a>
+
+        <div class="title">
+            <h3>Create a new product</h3>
+        </div>
+
+        <a th:href="@{'/products/list'}">
+            <i class="fa fa-th-list" aria-hidden="true"></i>
+            List all products
+        </a>
+
+    </header>
+
+
+<main>
+    <div>
+        <form th:action="@{/products/create}" method="post" id="create-product-form">
+            <input name="name" type="text" placeholder="name" />
+            <textarea name="description" placeholder="Description" maxlength="250"
+                      form="create-product-form" rows="5"></textarea>
+            <select name="categories" id="categories">
+                <option value="select">Categories</option>
+                <option value="html5">HTML5</option>
+                <option value="css3">CSS3</option>
+                <option value="javaScript">JavaScript</option>
+                <option value="reactJS">ReactJS</option>
+                <option value="vueJS">VueJS</option>
+                <option value="angular">Angular</option>
+                <option value="typeScript">TypeScript</option>
+            </select>
+
+            <input name="imgsrc" type="file" accept="image/*" class="imgsrc">
+
+            <div id="price in dollar">
+                <input name="price" type="number" placeholder="price in euro" min="1" max="100000" />
+            </div>
+
+
+            <input type="submit" value="create product" />
+        </form>
+    </div>
+</main>
+
+
+</body>
+</html>

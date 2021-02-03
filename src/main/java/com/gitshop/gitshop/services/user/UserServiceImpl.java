@@ -1,6 +1,4 @@
-package com.gitshop.gitshop.services;
-
-import java.util.HashSet;
+package com.gitshop.gitshop.services.user;
 
 import com.gitshop.gitshop.models.User;
 import com.gitshop.gitshop.repositories.UserRepository;

@@ -15,6 +15,8 @@ a {
   text-decoration: none;
 }
 
+
+
 /*global variables*/
 :root {
   /*colors*/
@@ -30,6 +32,18 @@ a {
   /*fonts*/
   font-size: 62.5%;
   font-family: "Roboto", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 140px;
+  border: 1px dashed var(--background-color);
+  margin-bottom: 20px;
+}
+
+header img {
+  width: 250px;
 }
 
 body {
